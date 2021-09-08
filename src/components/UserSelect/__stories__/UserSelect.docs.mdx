@@ -67,8 +67,6 @@ import {
 
 Выбор варианта срабатывает по клику мыши или по нажатию `Enter` на клавиатуре.
 
-<UserSelectExampleItems />
-
 ```tsx
 type Item = {
   label: string;
@@ -102,14 +100,14 @@ export function UserSelectExampleItems() {
 }
 ```
 
+<UserSelectExampleItems />
+
 ### Подсказка
 
 Подсказка, которая видна, когда ни один вариант не выбран, задается в свойстве `placeholder`.
 Сформулируйте подсказку так, чтобы стало понятно, что по клику на поле раскроется список вариантов, один из которых нужно выбрать.
 
 Если не знаете, что писать, напишите **Выберите**.
-
-<UserSelectExamplePlaceholder />
 
 ```tsx
 type Item = {
@@ -151,11 +149,11 @@ export function UserSelectExamplePlaceholder() {
 }
 ```
 
+<UserSelectExamplePlaceholder />
+
 ### Неактивный элемент списка
 
 Чтобы сделать вариант в списке неактивным, добавьте к элементу массива `items` свойство `disabled: true`. Если используете [кастомный тип `items`](#кастомные-типы-данных-для-групп-и-вариантов), можете добавить своё свойство.
-
-<UserSelectExampleDisabledItem />
 
 ```tsx
 type Item = {
@@ -201,13 +199,13 @@ export function UserSelectExampleDisabledItem() {
 }
 ```
 
+<UserSelectExampleDisabledItem />
+
 ### Несколько вариантов
 
 По умолчанию из списка можно выбрать только одного пользователя. Чтобы выбрать нескольких, добавьте `multiple`.
 
 > В этом случае `value` становится массивом, а в `onChange` передаётся массив выбранных элементов.
-
-<UserSelectExampleMultiple />
 
 ```tsx
 type Item = {
@@ -252,14 +250,14 @@ export function UserSelectExampleMultiple() {
 }
 ```
 
+<UserSelectExampleMultiple />
+
 ### Группы вариантов
 
 Чтобы разбить элементы списка на группы, передайте массив групп в свойстве `groups`. Тип элемента массива `groups` по умолчанию равен [DefaultGroup](#свойства)). Что внутри:
 
 - `label` — название группы (в нём не нужна точка),
 - `id` — уникальный ключ.
-
-<UserSelectExampleGroups />
 
 ```tsx
 type Item = {
@@ -322,13 +320,13 @@ export function UserSelectExampleGroups() {
 }
 ```
 
+<UserSelectExampleGroups />
+
 ## Размер
 
 За размер компонента отвечает свойство `size`. Варианты: `s`, `m`, `l`, по умолчанию `m`.
 
 Компонент занимает всю ширину родительского блока.
-
-<UserSelectExampleSize />
 
 ```tsx
 type Item = {
@@ -385,12 +383,12 @@ export function UserSelectExampleSize() {
 }
 ```
 
+<UserSelectExampleSize />
+
 ## Форма
 
 За форму компонента отвечает свойство `form`. Варианты:
 `default`, `brick`, `round`, `clearRound`, `roundClear`, `clearDefault`, `defaultClear`, `defaultBrick`, `brickDefault`, `brickClear`, `clearBrick`, `clearClear`. По умолчанию `default`.
-
-<UserSelectExampleForm />
 
 ```tsx
 type Item = {
@@ -433,11 +431,11 @@ export function UserSelectExampleForm() {
 }
 ```
 
+<UserSelectExampleForm />
+
 ## Внешний вид
 
 За вид компонента отвечает свойство `view`. Варианты: `default`, `clear`, по умолчанию `default`.
-
-<UserSelectExampleView />
 
 ```tsx
 type Item = {
@@ -480,11 +478,11 @@ export function UserSelectExampleView() {
 }
 ```
 
+<UserSelectExampleView />
+
 ## Неактивный выпадающий список
 
 Чтобы сделать список неактивным, добавьте `disabled`.
-
-<UserSelectExampleDisabled />
 
 ```tsx
 type Item = {
@@ -527,6 +525,8 @@ export function UserSelectExampleDisabled() {
 }
 ```
 
+<UserSelectExampleDisabled />
+
 ## Поиск
 
 Если в поле что-то напечатать, компонент найдёт всех пользователей, в имени которых есть напечатанные символы.
@@ -536,8 +536,6 @@ export function UserSelectExampleDisabled() {
 ## Создание новых пользователей
 
 Если при поиске в поле никого не нашлось, можно показать в селекте кнопку для создания нового значения. Пользователь сможет добавить значение в список, а потом выбрать его. В функцию на вход придёт `label` созданного элемента.
-
-<UserSelectExampleCreate />
 
 ```tsx
 type Item = {
@@ -575,6 +573,8 @@ export function UserSelectExampleCreate() {
 }
 ```
 
+<UserSelectExampleCreate />
+
 ## Кастомизация
 
 ### Кастомный элемент списка
@@ -583,8 +583,6 @@ export function UserSelectExampleCreate() {
 Свойство принимает [функцию рендера](https://reactjs.org/docs/render-props.html).
 
 > У корневого DOM-элемента должно быть свойство `role="option"`.
-
-<UserSelectExampleRenderItem />
 
 #### Пример с кастомными элементами и своей функцией для поиска
 
@@ -689,12 +687,12 @@ export function UserSelectExampleRenderItem() {
 }
 ```
 
+<UserSelectExampleRenderItem />
+
 ### Кастомное выбранное значение
 
 Сделать кастомное представление для выбранного значения можно с помощью свойства `renderValue`.
 Свойство принимает [функцию рендера](https://reactjs.org/docs/render-props.html).
-
-<UserSelectExampleRenderValue />
 
 ```tsx
 const cnUserSelectExampleRenderValue = cn('UserSelectExampleRenderValue');
@@ -765,6 +763,8 @@ export function UserSelectExampleRenderValue() {
 }
 ```
 
+<UserSelectExampleRenderValue />
+
 ### Кастомные типы данных для групп и вариантов
 
 Вы можете использовать кастомные типы данных для элементов списка (`items`) и групп (`groups`) — они могут отличаться от [DefaultItem](#свойства) и [DefaultGroup](#свойства).
@@ -791,8 +791,6 @@ export const defaultGetGroupLabel = (group) => group.label;
 
 #### Пример с кастомным Item
 
-<UserSelectExampleCustomTypes />
-
 ```tsx
 export function UserSelectExampleCustomTypes() {
   const [value, setValue] = useState<string | null>();
@@ -809,9 +807,9 @@ export function UserSelectExampleCustomTypes() {
 }
 ```
 
-#### Пример с кастомными Item и Group
+<UserSelectExampleCustomTypes />
 
-<UserSelectExampleCustomTypesWithGroups />
+#### Пример с кастомными Item и Group
 
 ```tsx
 const groups = ['Отдел разработкки', 'Отдел закупок'];
@@ -849,6 +847,8 @@ export function UserSelectExampleCustomTypesWithGroups() {
   );
 }
 ```
+
+<UserSelectExampleCustomTypesWithGroups />
 
 ## Свойства
 
